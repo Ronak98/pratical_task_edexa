@@ -35,6 +35,15 @@ const vsmAuth = {
   },
 };
 
+const vsmForm = {
+  successRegister: "Record created successfully",
+  validation: {
+    name: [{ required: true, message: "Name cannot be empty." }],
+    address: [{ required: true, message: "Address cannot be empty." }],
+    bday: [{ required: true, message: "Birth Day cannot be empty." }],
+  },
+};
+
 const vsmNotify = {
   success: (data) => {
     notification.success({ placement: "bottomRight", duration: 3, ...data });
@@ -44,4 +53,4 @@ const vsmNotify = {
   },
 };
 
-export { vsmNotify, vsmAuth };
+export { vsmNotify, vsmAuth, vsmForm };

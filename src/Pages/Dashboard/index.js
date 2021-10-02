@@ -1,15 +1,18 @@
 import { Button, PageHeader } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import TableComponent from "../../Components/TableComponent";
 import AddComponent from "./Components/AddComponent";
 import EditComponent from "./Components/EditComponent";
 import { setCurrentObj } from "./dashboardSlice";
+import { logout } from "../Login/loginSlice";
 
 export function Dashboard() {
   const [addModal, setAddModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const dispatch = useDispatch();
+  let history = useHistory();
 
   // useEffect hook for api call to set data
   useEffect(() => {}, []);
@@ -29,6 +32,11 @@ export function Dashboard() {
   // Close form of edit cash transaction
   const closeEditModal = () => setEditModal(false);
 
+  const logoutCall = () => {
+    dispatch(logout());
+    history.push("/");
+  };
+
   return (
     <div className="dashboard">
       <PageHeader
@@ -36,6 +44,9 @@ export function Dashboard() {
         extra={[
           <Button key="1" title="Add Form" onClick={openAddModal}>
             Add Form
+          </Button>,
+          <Button key="2" title="Logout" onClick={logoutCall}>
+            Logout
           </Button>,
         ]}
       >

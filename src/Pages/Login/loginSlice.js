@@ -29,6 +29,9 @@ export const loginSlice = createSlice({
       state.isError = "Invalid email or password";
       state.loading = false;
     },
+    logout: (state, action) => {
+      state.loggingIn = false;
+    },
     registerSuccess: (state, action) => {
       state.user.push(action.payload);
       state.isError = null;
@@ -48,6 +51,7 @@ export const {
   registerSuccess,
   registerError,
   clearState,
+  logout,
 } = loginSlice.actions;
 export const loginState = (state) => state.login;
 

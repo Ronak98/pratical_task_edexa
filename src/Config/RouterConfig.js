@@ -1,4 +1,3 @@
-import { Dashboard } from "../Pages/Dashboard";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PageNotFound from "../Pages/PageNotFound";
@@ -9,6 +8,7 @@ export const RouterConfig = [
     path: "/",
     component: Login,
     default: true,
+    exact: true,
   },
   {
     title: "Register",
@@ -17,16 +17,8 @@ export const RouterConfig = [
     default: true,
   },
   {
-    title: "Dashboard",
-    path: "/dashboard",
-    component: Dashboard,
-    authdefault: true,
-    auth: true,
-    setting: { header: true, nav: true },
-  },
-  {
     title: "Page Not Found",
-    path: "/",
+    path: "/*",
     component: PageNotFound,
     errorpage: true,
     setting: { header: true, nav: true },

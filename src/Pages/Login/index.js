@@ -31,8 +31,8 @@ const Login = () => {
       vsmNotify.success({
         message: vsmAuth.success,
       });
-      history.push("/dashboard");
       dispatch(loginSuccess(data));
+      history.push("/dashboard");
     } else {
       dispatch(loginError(data));
     }

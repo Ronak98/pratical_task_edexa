@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { RouterConfig } from "../Config/RouterConfig";
+import { AuthRouterConfig } from "../Config/AuthRouterConfig";
 
 const AppAuthRouter = () => {
   return (
     <Switch>
-      {RouterConfig.map((item, index) => {
+      {AuthRouterConfig.map((item, index) => {
         var exact = true;
         if (item.errorpage === true) {
           exact = false;

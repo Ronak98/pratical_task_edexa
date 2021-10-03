@@ -7,3 +7,5 @@
 #### I have used Antd for design purpose & redux-toolkit for state management.
 
 #### Also, have used Netlify for CI/CD.
+
+##### Sorry, I forgot to commit the change.

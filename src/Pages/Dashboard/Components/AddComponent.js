@@ -13,13 +13,21 @@ import moment from "moment";
 const AddComponent = (props) => {
   const [form] = Form.useForm();
   const [disabled, setDisabled] = useState(true);
-  const { loading } = useSelector(dashboardState);
+  const { loading, tableList } = useSelector(dashboardState);
   const dispatch = useDispatch();
 
   // Make function call to add new record
   const handleSubmit = (data) => {
     data.bday = data.bday && moment(data.bday).format("YYYY-MM-DD");
     dispatch(loadingOn());
+    let max = 0;
+    let arr = tableList;
+    arr.forEach((item) => {
+      if (item.id > max) {
+        max = item.id;
+      }
+    });
+    data.id = max + 1;
     dispatch(addData(data));
     close();
   };

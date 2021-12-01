@@ -1,9 +1,6 @@
-# pratical_task_edexa
+## Code Structure
 
-### Tech Stack: Antd, redux/redux-toolkit
-
-### Live: https://edexa-practical-task.netlify.app
-
-#### I have used Antd for design purpose & redux-toolkit for state management.
-
-#### Also, have used Netlify for CI/CD.
+1. Maintain Quality Coding standard.
+2. Developed CRUD Operation.
+3. Login / Authentication feature with global state management using redux-toolkit.
+4. Deployed on netlify.
